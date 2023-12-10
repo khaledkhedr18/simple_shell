@@ -5,6 +5,7 @@
  * Return: Void
  * @comm: the string of the command
  * @size: the size of the command
+ * @mystatus: the status return value
 */
 
 void khedira_uinput(char *comm, size_t size, int mystatus)
@@ -18,8 +19,7 @@ void khedira_uinput(char *comm, size_t size, int mystatus)
 
 		else
 		{
-			khedira("Error while reading the input.\n");
-			exit(EXIT_FAILURE);
+			exit(mystatus);
 		}
 	}
 	comm[strcspn(comm, "\n")] = '\0';
